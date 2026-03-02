@@ -1,3 +1,5 @@
+import 'package:flutter_lab/TERM-2/SMALL-HOMEWORK-GLOBAL-STATE/data/repositories/settings/app_settings_repository.dart';
+import 'package:flutter_lab/TERM-2/SMALL-HOMEWORK-GLOBAL-STATE/data/repositories/settings/app_settings_repository_mock.dart';
 import 'package:provider/provider.dart';
 import 'package:nested/nested.dart';
 
@@ -17,7 +19,7 @@ List<SingleChildWidget> get devProviders {
     ChangeNotifierProvider<PlayerState>(create: (_) => PlayerState()),
 
     // 3 - Inject the  app setting state
-    ChangeNotifierProvider<AppSettingsState>(create: (_) => AppSettingsState()),
+    ChangeNotifierProvider<AppSettingsState>(create: (_) => AppSettingsState(AppSettingsRepositoryMock())..init()),
   ];
 }
 
